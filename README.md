@@ -5,6 +5,13 @@ This application demonstrates how to:
 
 ## How to run for tests:
 ```
+docker build -t test -f Dockerfile.dev .
+docker run -it test
+```
+
+## How to run for dev:
+As above or:
+```
 docker-compose up --build
 docker-compose down
 ```
