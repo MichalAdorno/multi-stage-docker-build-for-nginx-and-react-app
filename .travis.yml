@@ -2,11 +2,12 @@ language: generic
 sudo: required
 services:
   - docker
-
-before-install:
-  # - docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t michaladorno/test-container -f Dockerfile.dev .
-  - docker push michaladorno/test-container
+git:
+  depth: false
 script:
-  - docker run -it -e CI=true michaladorno/test-container npm run test -- --coverage
+  # - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
+  - docker build -t "$DOCKER_USERNAME"/test-container -f Dockerfile.dev .
+  - docker images -a
+  - docker ps -a
+  - docker run -it -e CI=true -p 8080:80 "$DOCKER_USERNAME"/test-container npm run test -- --coverage
 

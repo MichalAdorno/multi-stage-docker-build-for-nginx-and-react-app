@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/MichalAdorno/multi-stage-docker-build-for-nginx-and-react-app.svg?branch=master)](https://travis-ci.org/MichalAdorno/multi-stage-docker-build-for-nginx-and-react-app)
 # A React.js Application with Multi-Stage Docker Build
 This application demonstrates how to:
 * use `Dockerfile` for multi-stage build
