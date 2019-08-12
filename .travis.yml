@@ -5,7 +5,6 @@ services:
 git:
   depth: false
 script:
-  # - docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
   - docker build -t "$DOCKER_USERNAME"/test-container -f Dockerfile.dev .
   - docker images -a
   - docker ps -a
